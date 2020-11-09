@@ -385,7 +385,7 @@ impl CookieStore {
         CookieStore::load(reader, |cookie| ::serde_json::from_str(cookie))
     }
 
-    fn from_cookies<I, E>(iter: I) -> Result<Self, E>
+    pub fn from_cookies<I, E>(iter: I) -> Result<Self, E>
     where
         I: IntoIterator<Item = Result<Cookie<'static>, E>>,
     {
